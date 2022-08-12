@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,19 +10,40 @@ namespace DesafioEntregable
 {
     public class InicioSesion : DbHandler
     {
-        public void IniciarSesion()
+        public bool Sesion(string NombreUsuario, string Contraseña)
         {
-            using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
+            bool respuesta = false;
+            try
             {
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT Usuario AND Contraseña FROM Usuario" +
-                " WHERE Contraseña = @contraseña", sqlConnection))
+                using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
                 {
+                    var query = @"SELECT * FROM Usuario WHERE NombreUsuario = @NombreUsuario and Contraseña = @Contraseña";
                     sqlConnection.Open();
 
-                }
-                sqlConnection.Close();
-            }
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.Parameters.Add(new SqlParameter("NombreUsuario", SqlDbType.VarChar) { Value = NombreUsuario });
+                        sqlCommand.Parameters.Add(new SqlParameter("Contraseña", SqlDbType.VarChar) { Value = Contraseña });
+                        sqlCommand.ExecuteNonQuery();
 
+                        using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                        {
+                            if (dataReader.HasRows)
+                            {
+                                respuesta = true;
+                            }
+                        }
+                    }
+                    sqlConnection.Close();
+                }
+            }
+            catch (Exception)
+            {
+                return respuesta;
+            }
+            return respuesta;
         }
     }
 }
+
+
