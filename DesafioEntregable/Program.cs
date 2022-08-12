@@ -15,6 +15,9 @@
 
             VentasHandler ventasHandler = new VentasHandler();
             ventasHandler.GetVentas();
+            
+            InicioSesion inicioSesion = new InicioSesion();
+            inicioSesion.Sesion("ArielG", "ariel1234");
         }
     }
 }
