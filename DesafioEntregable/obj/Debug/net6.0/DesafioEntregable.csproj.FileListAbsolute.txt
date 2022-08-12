@@ -1,0 +1,5 @@
+C:\Users\marce\Desktop\Visual\Proyecto__Final\DesafioEntregable\obj\Debug\net6.0\DesafioEntregable.csproj.AssemblyReference.cache
+C:\Users\marce\Desktop\Visual\Proyecto__Final\DesafioEntregable\obj\Debug\net6.0\DesafioEntregable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marce\Desktop\Visual\Proyecto__Final\DesafioEntregable\obj\Debug\net6.0\DesafioEntregable.AssemblyInfoInputs.cache
+C:\Users\marce\Desktop\Visual\Proyecto__Final\DesafioEntregable\obj\Debug\net6.0\DesafioEntregable.AssemblyInfo.cs
+C:\Users\marce\Desktop\Visual\Proyecto__Final\DesafioEntregable\obj\Debug\net6.0\DesafioEntregable.csproj.CoreCompileInputs.cache
