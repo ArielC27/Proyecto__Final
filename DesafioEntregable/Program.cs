@@ -17,7 +17,7 @@
             ventasHandler.GetVentas();
             
             InicioSesion inicioSesion = new InicioSesion();
-            inicioSesion.Sesion("ArielG", "ariel1234");
+            inicioSesion.IniciarSesion("ArielG", "ariel1234");
         }
     }
 }

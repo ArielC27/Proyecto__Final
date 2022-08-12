@@ -14,7 +14,8 @@ namespace DesafioEntregable
             List<Venta> ventas = new List<Venta>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Venta", sqlConnection))
+                var queryVenta = "SELECT * FROM Venta";
+                using (SqlCommand sqlCommand = new SqlCommand(queryVenta, sqlConnection))
                 {
                     sqlConnection.Open();
 

@@ -14,7 +14,8 @@ namespace DesafioEntregable
             List<Usuario> usuarios = new List<Usuario>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Usuario", sqlConnection))
+                var queryUsuario = "SELECT * FROM Usuario";
+                using (SqlCommand sqlCommand = new SqlCommand(queryUsuario, sqlConnection))
                 {
                     sqlConnection.Open();
 

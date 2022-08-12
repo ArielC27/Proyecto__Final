@@ -14,7 +14,8 @@ namespace DesafioEntregable
             List<Producto> productos = new List<Producto>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Producto", sqlConnection))
+                var queryPrdocuto = "SELECT * FROM Producto";
+                using (SqlCommand sqlCommand = new SqlCommand(queryPrdocuto, sqlConnection))
                 {
                     sqlConnection.Open();
 
