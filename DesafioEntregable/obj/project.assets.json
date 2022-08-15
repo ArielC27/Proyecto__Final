@@ -460,9 +460,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marce\\Desktop\\Visual\\Proyecto__Final\\DesafioEntregable\\DesafioEntregable.csproj",
-      "projectName": "DesafioEntregable",
-      "projectPath": "C:\\Users\\marce\\Desktop\\Visual\\Proyecto__Final\\DesafioEntregable\\DesafioEntregable.csproj",
+      "projectUniqueName": "C:\\Users\\marce\\Desktop\\Visual\\Proyecto__Final\\DesafioEntregable\\ProyectoFinal.csproj",
+      "projectName": "ProyectoFinal",
+      "projectPath": "C:\\Users\\marce\\Desktop\\Visual\\Proyecto__Final\\DesafioEntregable\\ProyectoFinal.csproj",
       "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\marce\\Desktop\\Visual\\Proyecto__Final\\DesafioEntregable\\obj\\",
       "projectStyle": "PackageReference",

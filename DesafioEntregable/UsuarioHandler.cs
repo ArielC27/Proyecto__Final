@@ -26,9 +26,10 @@ namespace DesafioEntregable
                             while (dataReader.Read())
                             {
                                 Usuario usuario = new Usuario();
+                                usuario.Id = Convert.ToInt32(dataReader["Id"]);
                                 usuario.Nombre = dataReader["Nombre"].ToString();
                                 usuario.Apellido = dataReader["Apellido"].ToString();
-                                usuario.NombreUsuario = dataReader["Costo"].ToString();
+                                usuario.NombreUsuario = dataReader["NombreUsuario"].ToString();
                                 usuario.Contraseña = dataReader["Contraseña"].ToString();
                                 usuario.Email = dataReader["Mail"].ToString();
                             

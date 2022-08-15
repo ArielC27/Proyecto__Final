@@ -17,7 +17,9 @@
             ventasHandler.GetVentas();
             
             InicioSesion inicioSesion = new InicioSesion();
-            inicioSesion.IniciarSesion("ArielG", "ariel1234");
+            inicioSesion.NombreUsuario = "ArielG";
+            inicioSesion.Contraseña = "ariel1234";
+            inicioSesion.IniciarSesion();
         }
     }
 }

@@ -27,8 +27,8 @@ namespace DesafioEntregable
                             {
                                 ProductoVendido productoVendido  = new ProductoVendido();
                                 productoVendido.Id = Convert.ToInt32(dataReader["Id"]);
-                                productoVendido.Stock = Convert.ToInt32(dataReader["Stock"]);
                                 productoVendido.IdProducto = Convert.ToInt32(dataReader["IdProducto"]);
+                                productoVendido.Stock = Convert.ToInt32(dataReader["Stock"]);
                                 productoVendido.IdVenta = Convert.ToInt32(dataReader["IdVenta"]);
 
                                 productosVendidos.Add(productoVendido);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CunpfsUsR/mcBE/qdZdnix5W2lb5m3E6ug8RxPRxdIXXMDq+Z1MGXHp1Kl/BtIIpHjgoKLrBpfkHjA8vWVi1eg==",
+  "dgSpecHash": "Rc5ge8SwkF6y03LBUKvaNZXxNV1scD2LpfKoh0jBvldGiIj4UDMD2flgnpD1d1qal6Lr60PZvj5brNP32FI8OQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marce\\Desktop\\Visual\\Proyecto__Final\\DesafioEntregable\\DesafioEntregable.csproj",
+  "projectFilePath": "C:\\Users\\marce\\Desktop\\Visual\\Proyecto__Final\\DesafioEntregable\\ProyectoFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marce\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\marce\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

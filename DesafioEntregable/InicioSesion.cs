@@ -5,17 +5,20 @@ namespace DesafioEntregable
 {
     public class InicioSesion : DbHandler
     {
-        public bool IniciarSesion (string NombreUsuario, string Contraseña)
+        public string NombreUsuario { get; set; }
+        public string Contraseña { get; set; }
+
+        public bool IniciarSesion()
         {
             bool respuesta = false;
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
                 {
-                    var querySesion = @"SELECT * FROM Usuario WHERE NombreUsuario = @NombreUsuario and Contraseña = @Contraseña";
-                    sqlConnection.Open();
+                    var query = @"SELECT * FROM Usuario WHERE NombreUsuario = @NombreUsuario AND Contraseña = @Contraseña";
 
-                    using (SqlCommand sqlCommand = new SqlCommand(querySesion, sqlConnection))
+                    sqlConnection.Open();
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                     {
                         sqlCommand.Parameters.Add(new SqlParameter("NombreUsuario", SqlDbType.VarChar) { Value = NombreUsuario });
                         sqlCommand.Parameters.Add(new SqlParameter("Contraseña", SqlDbType.VarChar) { Value = Contraseña });
