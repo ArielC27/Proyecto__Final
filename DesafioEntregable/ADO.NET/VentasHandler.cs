@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,17 @@ namespace ProyectoFinal.ADO.NET
 {
     public class VentasHandler : DbHandler
     {
-        public List<Venta> GetVentas()
+        public List<Venta> GetVentas(int IdUsuario)
         {
             List<Venta> ventas = new List<Venta>();
+            // el ConnectionString se encuientra en DBHandler
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
-                var queryVenta = "SELECT * FROM Venta";
-                using (SqlCommand sqlCommand = new SqlCommand(queryVenta, sqlConnection))
+                var query = "SELECT * FROM Venta WHERE IdUsuario = @IdUsuario";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     sqlConnection.Open();
-
+                    sqlCommand.Parameters.Add(new SqlParameter("IdUsuario", SqlDbType.BigInt) { Value = IdUsuario });
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
                     {
                         if (dataReader.HasRows)
@@ -29,15 +31,15 @@ namespace ProyectoFinal.ADO.NET
                                 Venta venta = new Venta();
                                 venta.Id = Convert.ToInt32(dataReader["Id"]);
                                 venta.Comentarios = dataReader["Comentarios"].ToString();
-
                                 ventas.Add(venta);
                             }
                         }
                     }
+                    sqlConnection.Close();
                 }
-                sqlConnection.Close();
             }
             return ventas;
+        
         }
     }
 }

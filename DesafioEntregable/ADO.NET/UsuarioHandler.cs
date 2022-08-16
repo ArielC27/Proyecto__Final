@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,38 +11,36 @@ namespace ProyectoFinal.ADO.NET
 {
     public class UsuarioHandler : DbHandler
     {
-        public List<Usuario> GetUsuarios()
+        public Usuario GetUsuarios(string NombreUsuario)
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            Usuario usuario = new Usuario();
+            // el ConnectionString se encuientra en DBHandler
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
-                var queryUsuario = "SELECT * FROM Usuario";
-                using (SqlCommand sqlCommand = new SqlCommand(queryUsuario, sqlConnection))
+                var query = "SELECT * FROM Usuario where NombreUsuario = @NombreUsuario";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     sqlConnection.Open();
-
+                    sqlCommand.Parameters.Add(new SqlParameter("NombreUsuario", SqlDbType.VarChar) { Value = NombreUsuario });
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
                     {
                         if (dataReader.HasRows)
                         {
                             while (dataReader.Read())
                             {
-                                Usuario usuario = new Usuario();
-                                usuario.Id = Convert.ToInt32(dataReader["Id"]);
+                                usuario.Id = Convert.ToInt32(dataReader["ID"]);
                                 usuario.Nombre = dataReader["Nombre"].ToString();
                                 usuario.Apellido = dataReader["Apellido"].ToString();
                                 usuario.NombreUsuario = dataReader["NombreUsuario"].ToString();
-                                usuario.Contraseña = dataReader["Contraseña"].ToString();
+                               usuario.Contraseña = dataReader["Contraseña"].ToString();
                                 usuario.Email = dataReader["Mail"].ToString();
-
-                                usuarios.Add(usuario);
                             }
                         }
                     }
+                    sqlConnection.Close();
                 }
-                sqlConnection.Close();
-            }
-            return usuarios;
+           }
+            return usuario;
         }
     }
 }
