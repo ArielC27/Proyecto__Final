@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioEntregable
+namespace ProyectoFinal.Class
 {
- public class Usuario
+    public class Usuario
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

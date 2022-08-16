@@ -4,8 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProyectoFinal.Class;
 
-namespace DesafioEntregable
+namespace ProyectoFinal.ADO.NET
 {
     public class ProductoHandler : DbHandler
     {

@@ -1,4 +1,6 @@
-﻿namespace DesafioEntregable
+﻿using ProyectoFinal.ADO.NET;
+
+namespace DesafioEntregable
 {
     public class Program
     {

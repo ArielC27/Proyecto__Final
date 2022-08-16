@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioEntregable
+namespace ProyectoFinal.Class
 {
     public class Venta
     {

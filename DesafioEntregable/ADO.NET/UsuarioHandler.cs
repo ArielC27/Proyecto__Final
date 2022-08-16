@@ -4,10 +4,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProyectoFinal.Class;
 
-namespace DesafioEntregable
+namespace ProyectoFinal.ADO.NET
 {
-    public class UsuarioHandler: DbHandler
+    public class UsuarioHandler : DbHandler
     {
         public List<Usuario> GetUsuarios()
         {
@@ -32,7 +33,7 @@ namespace DesafioEntregable
                                 usuario.NombreUsuario = dataReader["NombreUsuario"].ToString();
                                 usuario.Contraseña = dataReader["Contraseña"].ToString();
                                 usuario.Email = dataReader["Mail"].ToString();
-                            
+
                                 usuarios.Add(usuario);
                             }
                         }

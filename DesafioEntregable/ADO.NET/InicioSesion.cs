@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DesafioEntregable
+namespace ProyectoFinal.ADO.NET
 {
     public class InicioSesion : DbHandler
     {

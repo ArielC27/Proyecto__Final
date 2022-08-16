@@ -4,8 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProyectoFinal.Class;
 
-namespace DesafioEntregable
+namespace ProyectoFinal.ADO.NET
 {
     public class ProductoVendidoHandler : DbHandler
     {
@@ -25,7 +26,7 @@ namespace DesafioEntregable
                         {
                             while (dataReader.Read())
                             {
-                                ProductoVendido productoVendido  = new ProductoVendido();
+                                ProductoVendido productoVendido = new ProductoVendido();
                                 productoVendido.Id = Convert.ToInt32(dataReader["Id"]);
                                 productoVendido.IdProducto = Convert.ToInt32(dataReader["IdProducto"]);
                                 productoVendido.Stock = Convert.ToInt32(dataReader["Stock"]);
